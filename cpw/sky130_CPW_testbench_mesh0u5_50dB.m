@@ -4,11 +4,6 @@ clear
 clc
 confirm_recursive_rmdir(0);   % delete old data without asking
 
-addpath('/home/gomesle/eda_tools/openEMS-Project/opt/openEMS/share/openEMS/matlab')
-addpath('/home/gomesle/eda_tools/openEMS-Project/opt/openEMS/share/CSXCAD/matlab')
-addpath('/home/gomesle/eda_tools/openEMS-Project/opt/openEMS/share/hyp2mat/matlab');
-addpath('/home/gomesle/eda_tools/openEMS-Project/opt/openEMS/share/CTB/matlab');
-
 basename = mfilename ; % get name of current model from *.m filename
 physical_constants;    % load table of physical constants
 
