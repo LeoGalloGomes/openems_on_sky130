@@ -48,7 +48,7 @@ th_M = [0.36 0.36 0.845 0.845 1.26];
 
 %% silicon substrate
 CSX = AddMaterial( CSX, 'Sub' );
-CSX = SetMaterialProperty( CSX, 'Sub', 'Epsilon', 11.9, 'Kappa', 2 );
+CSX = SetMaterialProperty( CSX, 'Sub', 'Epsilon', 11.9, 'Kappa', 0.3 );
 Sub.thick = 200;
 Sub.zmin = -283.75;
 Sub.zmax = Sub.zmin + Sub.thick;
@@ -56,9 +56,10 @@ Sub.zmax = Sub.zmin + Sub.thick;
 mesh.z = [linspace(Sub.zmin,Sub.zmax,20) ];
 
 
-%% EPI
+%% EPI -- even though sky130 doesn't have an EPI layer, 
+%%        I decided to keep it to enforce a thinner mesh at the BEOL/FEOL interface
 CSX = AddMaterial( CSX, 'EPI' );
-CSX = SetMaterialProperty( CSX, 'EPI', 'Epsilon', 11.9, 'Kappa', 5 );
+CSX = SetMaterialProperty( CSX, 'EPI', 'Epsilon', 11.9, 'Kappa', 0.3 );
 EPI.thick = 3.75;
 EPI.zmin = Sub.zmax;
 EPI.zmax = EPI.zmin + EPI.thick;
